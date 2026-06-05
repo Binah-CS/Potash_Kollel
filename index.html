@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title-home"></title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="i18n.js" defer></script>
+  <style>
+    .hero__bg { background-image: url('assets/images/bg_home.jpg'), linear-gradient(135deg, rgba(92, 61, 17, 0.55), rgba(196, 152, 42, 0.35)); }
+    .hero__logo.hero__logo--home img {   max-width: 1020px; width: min(720px, 100vw); }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/images/shutafut_logo.png" data-i18n-alt="header.logoAlt" />
+      </a>
+      <button class="navbar__hamburger" data-i18n-aria-label="nav.menu" type="button" onclick="toggleNav()">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html" class="navbar__link" data-i18n="nav.home"></a></li>
+        <li><a href="about.html" class="navbar__link" data-i18n="nav.about"></a></li>
+        <li><a href="partnership.html" class="navbar__link" data-i18n="nav.partnership"></a></li>
+        <li><a href="donate.html" class="navbar__link" data-i18n="nav.donate"></a></li>
+        <li><a href="kvitel.html" class="navbar__link" data-i18n="nav.kvitel"></a></li>
+        <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact"></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__logo hero__logo--home">
+        <img src="assets/images/shutafut_logo.png" data-i18n-alt="header.logoAlt" />
+      </div>
+      <h1 class="hero__title" data-i18n="home.heroTitle"></h1>
+      <div class="hero__actions">
+        <a href="partnership.html" class="btn" data-i18n="home.heroButton"></a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container section">
+    <section>
+      <div class="card">
+        <video controls poster="assets/images/shutafut_logo.png">
+          <source src="assets/videos/kollel_vid.mp4" type="video/mp4" />
+          <span data-i18n="home.videoFallback"></span>
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p data-i18n="footer.tagline"></p>
+      <p><a href="mailto:po0527634815@gmail.com" data-i18n="footer.email"></a> | <a href="tel:+972527634815" data-i18n="footer.phone"></a></p>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <button class="modal__close" onclick="closeModal()">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

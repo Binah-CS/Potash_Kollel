@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>תרומה — שותפות קהל שערי איש וכולל ארץ ישראל</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .hero__bg { background-image: url('assets/images/kollel_doc_2.jpg'), linear-gradient(135deg, rgba(92, 61, 17, 0.55), rgba(196, 152, 42, 0.35)); }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/images/shutafut_logo.png" alt="לוגו שותפות" />
+      </a>
+      <button class="navbar__hamburger" aria-label="תפריט" onclick="toggleNav()">☰</button>
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="index.html" class="navbar__link">דף הבית</a></li>
+        <li><a href="about.html" class="navbar__link">אודות הכולל</a></li>
+        <li><a href="partnership.html" class="navbar__link">השותפות</a></li>
+        <li><a href="donate.html" class="navbar__link">תרומה</a></li>
+        <li><a href="kvitel.html" class="navbar__link">קוויטלעך</a></li>
+        <li><a href="contact.html" class="navbar__link">צור קשר</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__logo">
+        <img src="assets/images/shutafut_logo.png" alt="לוגו שותפות" />
+      </div>
+    </div>
+  </section>
+
+  <main class="container section">
+    <div class="donation-grid">
+      <article class="donation-card">
+        <div class="donation-card__title">איין טאג א פרנס היום אין כולל</div>
+        <p class="donation-card__desc">84$ * 12 חודשים<br />נעם א חלק און א זכות מיט תורת ארץ ישראל<br />איין טאג אין כולל<br />וועלכע טאג די ווילסט במשך דעם יאר</p>
+        <button class="btn" id="donate-btn-1" onclick="openPayment(1)">צאלן</button>
+      </article>
+      <article class="donation-card">
+        <div class="donation-card__title">דריי טעג א פרנס היום אין כולל</div>
+        <p class="donation-card__desc">250$ * 12 חודשים<br />נעם א חלק און א זכות מיט תורת ארץ ישראל<br />דריי טעג אין כולל<br />וועלכע טעג די ווילסט במשך דעם יאר</p>
+        <button class="btn" id="donate-btn-2" onclick="openPayment(2)">צאלן</button>
+      </article>
+      <article class="donation-card">
+        <div class="donation-card__title">א שטר שותפות יששכר זבולון</div>
+        <p class="donation-card__desc">מיט א מתמיד אין ארץ ישראל<br />500$ * 12 חודשים<br />שמח זבולון בצאתך ויששכר באוהליך</p>
+        <button class="btn" id="donate-btn-3" onclick="openPayment(3)">צאלן</button>
+      </article>
+      <article class="donation-card">
+        <div class="donation-card__title">אויף א אנדערע נאמבער</div>
+        <p class="donation-card__desc">צור קשר לתיאום סכום מותאם אישית</p>
+        <button class="btn btn--outline" id="donate-btn-4" onclick="openPayment(4)">צאלן</button>
+      </article>
+    </div>
+  </main>
+
+  <script>
+    const paymentLinks = {
+      1: 'https://example.com/payment1',
+      2: 'https://example.com/payment2',
+      3: 'https://example.com/payment3',
+      4: 'https://example.com/payment4'
+    };
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <p>כולל שערי הכנה לתפילה בארץ ישראל</p>
+      <p><a href="mailto:po0527634815@gmail.com">po0527634815@gmail.com</a> | <a href="tel:+972527634815">972-52-7634815</a></p>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <button class="modal__close" onclick="closeModal()">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
