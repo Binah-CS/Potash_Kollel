@@ -54,8 +54,10 @@ function openPreview(src, titleKey) {
   const content = isPdf
     ? `
       <h2 class="modal__title">${titleText}</h2>
-      <p>${t('modal.pdfOpenText')}</p>
-      <p><a href="${src}" target="_blank" rel="noopener">${t('modal.openPdf')}</a></p>
+      <object data="${src}" type="application/pdf" width="100%" height="70vh" style="border-radius: 16px; margin-bottom: 1rem;">
+        <p>${t('modal.pdfOpenText')}</p>
+        <p><a href="${src}" target="_blank" rel="noopener">${t('modal.openPdf')}</a></p>
+      </object>
       <button class="btn" onclick="closeModal()">${t('modal.close')}</button>
     `
     : `
