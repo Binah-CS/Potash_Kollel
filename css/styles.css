@@ -171,10 +171,11 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-}rid
+}
 
 .navbar__logo img {
   height: 50px;
+  width: auto;
 }
 
 .navbar__links {
