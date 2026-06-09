@@ -8,11 +8,11 @@
   <script src="i18n.js" defer></script>
   <style>
     .hero__bg { background-image: url('assets/images/bg_home.jpg'), linear-gradient(135deg, rgba(92, 61, 17, 0.55), rgba(196, 152, 42, 0.35)); }
-    .hero__logo.hero__logo--home img {   max-width: 100%; width: 100%; }
-    .hero__logo.hero__logo--home img {  display: block;  height: auto; }
+ /*    .hero__logo.hero__logo--home img {   max-width: 100%; width: 100%; }
+    .hero__logo.hero__logo--home img {  display: block;  height: auto; } */
   </style>
 </head>
-<body>
+<body class="home-page">
   <nav class="navbar">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo">
@@ -33,32 +33,41 @@
   <section class="hero">
     <div class="hero__bg"></div>
     <div class="hero__overlay"></div>
+    <div class="hero__arch">
+      <svg viewBox="0 -50 780 180" aria-hidden="true">
+        <path id="heroArchPath" d="M60 150 C220 -20 560 -20 720 150" fill="none" />
+        <text text-anchor="middle">
+          <textPath xlink:href="#heroArchPath" startOffset="50%">
+            ייראוך עם שמש
+          </textPath>
+        </text>
+      </svg>
+    </div>  
+    <div class="hero__actions">
+        <a href="donate.html" class="btn" data-i18n="home.heroButton"></a>
+      </div>   
+
     <div class="hero__content">
-      <div class="hero__logo hero__logo--home">
+<!--       <div class="hero__logo hero__logo--home">
         <img src="assets/images/shutafut_logo.png" data-i18n-alt="header.logoAlt" />
-      </div>
+      </div> -->
       <h1 class="hero__title" data-i18n="home.heroTitle"></h1>
-      <div class="hero__actions">
-        <a href="partnership.html" class="btn" data-i18n="home.heroButton"></a>
-      </div>
+<!--       <div class="hero__actions">
+        <a href="donate.html" class="btn" data-i18n="home.heroButton"></a>
+      </div> -->
+    </div>
+    <div id="player" class="hero__player">
+      <iframe
+        src="https://www.youtube.com/embed/agbxf9gChjo"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
 
-  <main class="container section">
-    <section>
-      <div class="card">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/agbxf9gChjo"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-      ></iframe>
-      </div>
-    </section>
-  </main>
+  <main class="container section"></main>
 
   <footer class="footer">
     <div class="container">

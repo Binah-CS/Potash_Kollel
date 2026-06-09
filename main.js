@@ -132,7 +132,28 @@ function submitDedication(event, cardIndex) {
   `);
 }
 
-function openKvitelModal() {
+function openKvitelModal(selectedRabbi = '') {
+  const rabbiField = selectedRabbi
+    ? `
+      <div class="form__group">
+        <label class="form__label">${t('kvitel.formRabbi')}</label>
+        <input type="hidden" name="rabbi" value="${selectedRabbi}" />
+        <div class="form__note">${t(`kvitel.rabbi.${selectedRabbi}`)}</div>
+      </div>
+    `
+    : `
+      <div class="form__group">
+        <label class="form__label">${t('kvitel.formRabbi')}</label>
+        <select class="form__input" name="rabbi">
+          <option value="neventzal">${t('kvitel.rabbi.neventzal')}</option>
+          <option value="galai">${t('kvitel.rabbi.galai')}</option>
+          <option value="rashbi">${t('kvitel.rabbi.rashbi')}</option>
+          <option value="meir">${t('kvitel.rabbi.meir')}</option>
+          <option value="isaiah">${t('kvitel.rabbi.isaiah')}</option>
+        </select>
+      </div>
+    `;
+
   openModal(`
     <h2 class="modal__title">${t('kvitel.button')}</h2>
     <form class="form" onsubmit="submitKvitel(event)">
@@ -144,16 +165,7 @@ function openKvitelModal() {
         <label class="form__label">${t('kvitel.formNotes')}</label>
         <textarea class="form__textarea" name="notes" placeholder="${t('kvitel.formNotes')}"></textarea>
       </div>
-      <div class="form__group">
-        <label class="form__label">${t('kvitel.formRabbi')}</label>
-        <select class="form__input" name="rabbi">
-          <option value="neventzal">${t('kvitel.rabbi.neventzal')}</option>
-          <option value="galai">${t('kvitel.rabbi.galai')}</option>
-          <option value="rashbi">${t('kvitel.rabbi.rashbi')}</option>
-          <option value="meir">${t('kvitel.rabbi.meir')}</option>
-          <option value="isaiah">${t('kvitel.rabbi.isaiah')}</option>
-        </select>
-      </div>
+      ${rabbiField}
       <button class="btn" type="submit">${t('kvitel.submit')}</button>
     </form>
   `);

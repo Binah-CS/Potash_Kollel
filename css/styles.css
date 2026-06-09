@@ -171,7 +171,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-}
+}rid
 
 .navbar__logo img {
   height: 50px;
@@ -218,7 +218,7 @@ img {
   position: absolute;
   inset: 0;
   background-color: var(--color-accent);
-  background-image: linear-gradient(135deg, rgba(92, 61, 17, 0.55), rgba(196, 152, 42, 0.35));
+  /* background-image: linear-gradient(135deg, rgba(92, 61, 17, 0.55), rgba(196, 152, 42, 0.35)); */
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -265,6 +265,93 @@ img {
   gap: 1rem;
 }
 
+.home-page .hero {
+  min-height: 80vh;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+
+.home-page .hero__arch {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: min(860px, 90%);
+  pointer-events: none;
+}
+
+.home-page .hero__arch svg {
+  width: 100%;
+  height: auto;
+}
+
+.home-page .hero__arch text {
+  fill: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.05em;
+}
+
+
+.home-page .hero__title {
+  font-family: var(--font-primary);
+  font-size: var(--text-hero);
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+  line-height: 1.05;
+}
+
+/* .home-page .hero__content {
+  position: static;
+  padding: 7rem 1.5rem 0;
+  margin-bottom: calc(72vh / 3 + 1rem);
+} */
+
+.home-page .hero__content {
+  position: absolute;
+  bottom: min(28rem, 30vh);   /* matches hero__player height exactly */
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(860px, 90%);
+  padding: 0 1.5rem var(--space-sm);
+  z-index: 3;
+  text-align: center;
+}
+
+.home-page .hero__actions {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  justify-content: flex-start;
+  width: auto;
+  z-index: 3;
+}
+
+.home-page .hero__player {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(600px, 90%);
+  max-width: 860px;
+  height: min(28rem, 30vh);
+  max-height: 32rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.home-page .hero__player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -301,13 +388,67 @@ img {
   color: var(--color-white);
 }
 
+/* .kvitel-actions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+  min-height: 28vh;
+}
+
+.kvitel-actions__btn {
+  width: 100%;
+  min-height: 220px;
+  font-size: 1.9rem;
+  padding: 1.5rem 2rem;
+}
+ */
+
+  .kvitel-actions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: min(1140px, calc(100% - 2rem));
+  margin: 0 auto;
+  justify-items: stretch;
+} 
+
+.kvitel-actions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.kvitel-actions__btn {
+  width: 120%;
+  min-height: 220px;
+  font-size: 1.9rem;
+  padding: 1.5rem 2rem;
+} 
+
+
+
+@media (max-width: 900px) {
+  .kvitel-actions__grid {
+    grid-template-columns: 1fr;
+  }
+}
 .content-grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .content-grid--two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+  .content-grid--two {
+    grid-template-columns: 1fr;
+  }
 }
 
 .content-grid--three {
@@ -336,6 +477,33 @@ img {
   line-height: 1.7;
 }
 
+.contact_card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  display: grid;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.contact_card__title {
+  font-family: var(--font-primary);
+  font-size: var(--text-h2);
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+.contact_card__text {
+  color: var(--color-text-light);
+  line-height: 2;
+  font-size: var(--text-h2);
+  margin-bottom: 0;
+}
+
 #player {
   width: min(100%, 860px);
   aspect-ratio: 16 / 9;
@@ -352,26 +520,59 @@ img {
 
 .image-grid {
   display: grid;
-  gap: var(--space-sm);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-flow: dense;
 }
 
 .image-grid__item {
-  overflow: hidden;
+  background: #fff;
+  overflow: visible;
   border-radius: var(--card-radius);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
   cursor: pointer;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
 }
 
 .image-grid__item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.01);
   border-color: var(--color-secondary);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
+  z-index: 2;
 }
 
 .image-grid__item img {
-  height: 260px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.image-grid__item:nth-child(odd) {
+  /* transform: translateX(-8px) rotate(-0.6deg); */
+  transform: none;
+  z-index: 1;
+}
+
+.image-grid__item:nth-child(even) {
+  /* transform: translateX(-8px) rotate(-0.6deg); */
+  transform: none;
+  z-index: 0;
+}
+
+@media (max-width: 900px) {
+  .image-grid {
+    gap: var(--space-md);
+  }
+  .image-grid__item,
+  .image-grid__item:hover,
+  .image-grid__item:nth-child(odd),
+  .image-grid__item:nth-child(even) {
+    transform: none;
+    z-index: auto;
+  }
 }
 
 .pdf-card {
@@ -407,7 +608,9 @@ img {
 
 .donation-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-md);
+  align-items: stretch;
 }
 
 .donation-card {
@@ -444,6 +647,65 @@ img {
 .donation-card__desc {
   color: var(--color-text-light);
   line-height: 1.75;
+}
+
+.kvitel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+.kvitel-card {
+  display: grid;
+  gap: var(--space-md);
+  min-height: 380px;
+}
+
+.kvitel-card__image {
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  height: 180px;
+}
+
+.kvitel-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kvitel-card__body {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 0 var(--space-sm);
+}
+
+.kvitel-card__title {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+}
+
+.donation-card,
+.kvitel-card {
+  display: grid;
+  gap: var(--space-sm);
+  min-height: 320px;
+}
+
+@media (max-width: 1024px) {
+  .donation-grid,
+  .kvitel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .donation-grid,
+  .kvitel-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .form {
@@ -497,6 +759,25 @@ img {
 .footer a {
   color: var(--color-white);
   text-decoration: underline;
+}
+
+.about-page .hero {
+  position: relative;
+}
+
+.about-page .hero__logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: max(45%, 240px);
+  max-width: 240px;
+  z-index: 3;
+}
+
+.about-page .hero__logo img {
+  width: 20%;
+  height: auto;
+  display: block;
 }
 
 .modal-backdrop {
@@ -584,5 +865,6 @@ img {
     font-size: 2.8rem;
   }
 }
+
 
 
